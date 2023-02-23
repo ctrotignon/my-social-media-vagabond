@@ -51,7 +51,7 @@ export default function NavBar() {
         {user.isLogged ? (
           <>
             <Link to={"/myaccount"} className="NavBar-link">
-              ACCOUNT
+              COMPTE
             </Link>
             <Link to={"/logout"} className="NavBar-link">
               DECONNEXION

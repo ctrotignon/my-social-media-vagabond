@@ -72,12 +72,27 @@ export default function Thread() {
         .slice(0)
         .reverse()
         .map((post) => {
-         
+          
+          const month = [
+            'Décembre',
+            'Janvier',
+            'Février', 
+            'Mars', 
+            'Avril', 
+            'Mai', 
+            'Juin', 
+            'Juillet', 
+            'Aout', 
+            'Septembre', 
+            'Octobre', 
+            'Novembre'
+          ];
+          
           return (
             <div key={post.id} className="Post_Container">
               <div className="Post_Header">
                 <h3>{post.userName}</h3>
-                <p>{post.timestamp}</p>
+                <p> {post.timestamp.slice(8,10)} {month[post.timestamp.slice(6,7)]} {post.timestamp.slice(0,4)}</p>
               </div>
               {post.content.includes("http") ? (
                 <img src={post.content} alt="" />
@@ -87,7 +102,7 @@ export default function Thread() {
               <div className="Post_Footer">
                 <div className="Post_FooterLeftSide">
                   <Like postId = {post.id} className="Post_icon" />
-                  < Dislike postId = {post.id} className="Post_icon" />
+                  <Dislike postId = {post.id} className="Post_icon" disabled/>
                   <button onClick={handleClickComment} className="Comment_Icon">
                     <img 
                       src={Comments}
