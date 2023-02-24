@@ -1,13 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "../../context/userContext";
 
-
 import Comment from "../Comment";
 import Like from "../Like";
 import Dislike from "../Dislike";
-
-
-
 import Comments from "../../assets/comments.png";
 import Share from "../../assets/share.png";
 import Save from "../../assets/save.png";
@@ -92,6 +88,7 @@ export default function Thread() {
             <div key={post.id} className="Post_Container">
               <div className="Post_Header">
                 <h3>{post.userName}</h3>
+                {/*  this line below change the timestamp format into a date format */}
                 <p> {post.timestamp.slice(8,10)} {month[post.timestamp.slice(6,7)]} {post.timestamp.slice(0,4)}</p>
               </div>
               {post.content.includes("http") ? (

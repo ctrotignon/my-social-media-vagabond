@@ -28,7 +28,6 @@ export default function AddPost() {
         event.target.reset();
     }
 
-
   return (
     <form onSubmit={handleAddPost}>
         <h2>Créer une publication</h2>
